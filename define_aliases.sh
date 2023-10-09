@@ -3,9 +3,6 @@
 # Caminho para o diretório onde o script start_tmux_session.sh está localizado
 SCRIPT_DIR="$PWD"
 
-# Alias que será adicionado ao arquivo de configuração do shell
-ALIAS_COMMAND="alias vos='$SCRIPT_DIR/start_tmux.sh'"
-
 chmod +x $SCRIPT_DIR/start_tmux.sh
 
 PROJECTS=("vivaoshow" "sagpd")
