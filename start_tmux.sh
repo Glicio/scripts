@@ -18,7 +18,7 @@ else
         # Inicia uma nova sessão do tmux
         tmux new-session -s $project -d
         tmux split-window -v
-        tmux resize-pane -D 20
+        tmux resize-pane -D 17
         tmux -2 attach-session -d 
 
     else
