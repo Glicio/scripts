@@ -5,14 +5,15 @@ SCRIPT_DIR="$PWD"
 
 chmod +x $SCRIPT_DIR/start_tmux.sh
 
-PROJECTS=("vivaoshow" "sagpd")
-ALIASES=("vos" "sagpd")
+PROJECTS=("vivaoshow" "sagpd" "cchalenges" "x3mrp")
+ALIASES=("vos" "sagpd" "cchalenges" "x3mrp")
 # Verifica se o arquivo de configuração do shell existe
 if [ -f ~/.bashrc ]; then
     # Adiciona o alias ao arquivo de configuração do shell
     for i in "${!PROJECTS[@]}"; do
         echo "alias ${ALIASES[$i]}='$SCRIPT_DIR/start_tmux.sh ${PROJECTS[$i]}'" >> ~/.bashrc
         echo "Alias '${ALIASES[$i]}' foi adicionado ao seu ~/.bashrc e já está disponível para uso."
+        echo "alias :q='exit'" >> ~/.bashrc
     done
     # Recarrega o arquivo de configuração do shell para aplicar as mudanças
     source ~/.bashrc
@@ -21,6 +22,7 @@ elif [ -f ~/.zshrc ]; then
     for i in "${!PROJECTS[@]}"; do
         echo "alias ${ALIASES[$i]}='$SCRIPT_DIR/start_tmux.sh ${PROJECTS[$i]}'" >> ~/.zshrc
         echo "Alias '${ALIASES[$i]}' foi adicionado ao seu ~/.zshrc e já está disponível para uso."
+        echo "alias :q='exit'" >> ~/.zshrc
     done
     # Recarrega o arquivo de configuração do shell para aplicar as mudanças
     source ~/.zshrc
