@@ -16,10 +16,11 @@ else
         cd $dir
 
         # Inicia uma nova sessão do tmux
-        tmux new-session -s $project -d
+        tmux new-session -s $project -d nvim .
         tmux split-window -v
-        tmux resize-pane -D 17
-        tmux -2 attach-session -d 
+        tmux resize-pane -D 17 
+        tmux send-keys -t 1 "npm run dev"
+        tmux -2 attach-session -d
 
     else
         # Se o diretório não existe, exibe uma mensagem de erro
