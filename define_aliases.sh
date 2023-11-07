@@ -5,8 +5,8 @@ SCRIPT_DIR="$PWD"
 
 chmod +x $SCRIPT_DIR/start_tmux.sh
 
-PROJECTS=("vivaoshow" "sagpd" "cchalenges" "x3mrp")
-ALIASES=("vos" "sagpd" "cchalenges" "x3mrp")
+PROJECTS=("vivaoshow" "sagpd" "cchalenges" "x3mrp" "vos_docs")
+ALIASES=("vos" "sagpd" "cchalenges" "x3mrp" "vosd")
 # Verifica se o arquivo de configuração do shell existe
 if [ -f ~/.bashrc ]; then
     # Adiciona o alias ao arquivo de configuração do shell
