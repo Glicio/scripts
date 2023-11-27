@@ -17,7 +17,11 @@ if [ -f ~/.bashrc ]; then
     done
     # Recarrega o arquivo de configuração do shell para aplicar as mudanças
     source ~/.bashrc
-elif [ -f ~/.zshrc ]; then
+else
+    # Se nenhum arquivo de configuração do shell for encontrado, exibe uma mensagem de erro
+    echo "Erro: Não foi possível encontrar o arquivo de configuração do shell .bashrc!"
+fi
+if [ -f ~/.zshrc ]; then
     # Adiciona o alias ao arquivo de configuração do shell Zsh
     for i in "${!PROJECTS[@]}"; do
         echo "alias ${ALIASES[$i]}='$SCRIPT_DIR/start_tmux.sh ${PROJECTS[$i]}'" >> ~/.zshrc
@@ -29,5 +33,5 @@ elif [ -f ~/.zshrc ]; then
     echo "Alias 'vos' foi adicionado ao seu ~/.zshrc e já está disponível para uso."
 else
     # Se nenhum arquivo de configuração do shell for encontrado, exibe uma mensagem de erro
-    echo "Erro: Não foi possível encontrar o arquivo de configuração do shell (.bashrc ou .zshrc)."
+    echo "Erro: Não foi possível encontrar o arquivo de configuração do shell .zshrc!"
 fi
